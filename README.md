@@ -1,6 +1,13 @@
 # IndraAPI
 
 Bienvenido, aquí tenemos la documentación de uso de esta API realizada para el proceso de selección de Indra.
+Esta API utiliza las siguientes tecnologías y librerías:
+
+ - Serverless Framework
+ - NodeJS
+ - MySQL (Sequelize como ORM)
+ - Axios
+
 El endpoint base es el siguiente:
 https://nmaywdilhd.execute-api.us-east-2.amazonaws.com/dev
 
