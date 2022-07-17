@@ -1,0 +1,19 @@
+{
+  "name": "indraapi",
+  "version": "1.0.0",
+  "description": "Reto técnico para Indra",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oscar Pereda",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3"
+  },
+  "devDependencies": {
+    "serverless-offline": "^8.8.1"
+  }
+}

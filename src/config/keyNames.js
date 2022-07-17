@@ -1,0 +1,28 @@
+const spanishKeys = {
+    "title": "titulo",
+    "episode_id": "episode_id",
+    "opening_crawl": "apertura",
+    "director": "director",
+    "producer": "productor",
+    "release_date": "fecha_de_lanzamiento",
+    "characters": "personajes",
+    "planets": "planetas",
+    "starships": "naves_espaciales",
+    "vehicles": "vehiculos",
+    "species": "especies",
+    "url": "url",
+    "created": "creado",
+    "edited": "editado",
+    "name": "nombre",
+    "height": "altura",
+    "mass": "masa",
+    "hair_color": "color_de_cabello",
+    "skin_color": "color_de_piel",
+    "eye_color": "color_de_ojos",
+    "birth_year": "fecha_de_nacimiento",
+    "gender": "genero",
+    "homeworld": "mundo_natal",
+    "films": "peliculas",
+}
+
+exports.spanishKeys = spanishKeys

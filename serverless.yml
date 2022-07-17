@@ -1,0 +1,130 @@
+service: IndraAPI
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: us-east-2
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action: 
+        - ec2:CreateNetworkInterface
+        - ec2:DescribeNetworkInterfaces
+        - ec2:DeleteNetworkInterface
+      Resource:
+        - "*"
+  vpc:
+    securityGroupsIds:
+      - sg-0c204b4dea569ac05
+    subnetIds:
+      - subnet-0d2c79fdca5beb374
+      - subnet-0d2db17ddbd8f5ba9
+      - subnet-083289da7bdc41531
+  environment:
+    DB_NAME: prueba-tecnica-indra
+    DB_USER: admin
+    DB_PASSWORD: Y6X678^9Jlj$
+    DB_HOST: prueba-tecnica-indra.cmsjzo4eohe8.us-east-2.rds.amazonaws.com
+    DB_PORT: 3306
+
+functions:
+  GetFilms:
+    handler: handler.getFilms
+    events:
+      - http:
+          path: /peliculas
+          method: GET
+          cors: true
+  GetFilmById:
+    handler: handler.getFilmById
+    events:
+      - http:
+          path: /peliculas/{id}
+          method: GET
+          cors: true
+  GetPeople:
+    handler: handler.getPeople
+    events:
+      - http:
+          path: /personas
+          method: GET
+          cors: true
+  GetPersonById:
+    handler: handler.getPersonById
+    events:
+      - http:
+          path: /personas/{id}
+          method: GET
+          cors: true
+  GetPlanets:
+    handler: handler.getPlanets
+    events:
+      - http:
+          path: /planetas
+          method: GET
+          cors: true
+  GetPlanetById:
+    handler: handler.getPlanetById
+    events:
+      - http:
+          path: /planetas/{id}
+          method: GET
+          cors: true
+  GetSpecies:
+    handler: handler.getSpecies
+    events:
+      - http:
+          path: /especies
+          method: GET
+          cors: true
+  GetSpeciesById:
+    handler: handler.getSpeciesById
+    events:
+      - http:
+          path: /especies/{id}
+          method: GET
+          cors: true
+  GetStarships:
+    handler: handler.getStarships
+    events:
+      - http:
+          path: /naves
+          method: GET
+          cors: true
+  GetStarshipById:
+    handler: handler.getStarshipById
+    events:
+      - http:
+          path: /naves/{id}
+          method: GET
+          cors: true
+  GetVehicles:
+    handler: handler.getVehicles
+    events:
+      - http:
+          path: /vehiculos
+          method: GET
+          cors: true
+  GetVehicleById:
+    handler: handler.getVehicleById
+    events:
+      - http:
+          path: /vehiculos/{id}
+          method: GET
+          cors: true
+  GetClients:
+    handler: handler.getClients
+    events:
+      - http:
+          path: /clientes
+          method: GET
+          cors: true
+  SetClients:
+    handler: handler.setClients
+    events:
+      - http:
+          path: /clientes
+          method: POST
+          cors: true
