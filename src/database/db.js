@@ -25,17 +25,7 @@ const ClientEntity = clientEntities(sequelize, Sequelize);
 const Models = { ClientEntity };
 const connection = {};
 
-module.exports.sequelize = async () => {
-    if (connection.isConnected) {
-        console.log('=> Using existing connection.');
-        return sequelize;
-    };
-    await sequelize.sync();
-    //await sequelize.authenticate();
-    connection.isConnected = true;
-    console.log('=> Created a new connection!.');
-    return sequelize;
-}
+
 
 module.exports.models = async () => {
     if (connection.isConnected) {
@@ -43,7 +33,6 @@ module.exports.models = async () => {
         return sequelize;
     };
     await sequelize.sync();
-    //await sequelize.authenticate();
     connection.isConnected = true;
     console.log('=> Created a new connection!.');
     
